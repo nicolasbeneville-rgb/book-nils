@@ -135,7 +135,7 @@
             z-index: 100;
             padding: 1.5rem 3rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
         }
@@ -417,6 +417,10 @@
             margin-top: 0.5rem;
         }
 
+        .phone-cta {
+            margin-top: 0.5rem;
+        }
+
         .contact-links {
             display: flex;
             gap: 1.5rem;
@@ -526,7 +530,6 @@
 
     <!-- NAV -->
     <nav>
-        <div class="logo">NB</div>
         <ul>
             <li><a href="#profil">Profil</a></li>
             <li><a href="#galerie">Galerie</a></li>
@@ -682,6 +685,7 @@
             <p class="cta-text">Disponible pour vos projets théâtre & cinéma.</p>
             <a href="mailto:nils.benville19@gmail.com?subject=Contact%20Book%20Nils%20Beneville" class="cta-button">Écrivez-moi</a>
             <span class="email-plain">nils.benville19@gmail.com</span>
+            <a href="#" id="phone-link" class="cta-button phone-cta"></a>
             <div class="contact-links">
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
             </div>
@@ -732,6 +736,15 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') lightbox.classList.remove('active');
         });
+
+        // Téléphone anti-bot (généré en JS, invisible dans le HTML source)
+        (function() {
+            const p = ['06','51','69','62','63'];
+            const num = p.join('.');
+            const link = document.getElementById('phone-link');
+            link.href = 'tel:+33' + p.join('');
+            link.textContent = '☎ ' + num;
+        })();
     </script>
 
 </body>
