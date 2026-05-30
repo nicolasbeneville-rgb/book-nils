@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nils BENEVILLE — Acteur</title>
+    <title>Nils BENEVILLE — Acteur | Théâtre & Cinéma</title>
+    <meta name="description" content="Book en ligne de Nils Beneville, acteur basé à Aix-en-Provence. Formé au Conservatoire (cycle 3) et au Cours Florent. Disponible pour vos projets théâtre et cinéma.">
+    <meta name="keywords" content="Nils Beneville, acteur, Aix-en-Provence, théâtre, cinéma, book acteur, conservatoire, Cours Florent">
+    <meta name="author" content="Nils Beneville">
+
+    <!-- Open Graph (aperçu réseaux sociaux) -->
+    <meta property="og:title" content="Nils BENEVILLE — Acteur">
+    <meta property="og:description" content="Acteur formé au Conservatoire d'Aix-en-Provence. Jeu physique, direct, sans filtre. Disponible théâtre & cinéma.">
+    <meta property="og:image" content="https://nicolasbeneville-rgb.github.io/book-nils/Photos/IMG-20250414-WA0185.jpg">
+    <meta property="og:url" content="https://nicolasbeneville-rgb.github.io/book-nils/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nils BENEVILLE — Acteur">
+    <meta name="twitter:description" content="Acteur formé au Conservatoire d'Aix-en-Provence. Jeu physique, direct, sans filtre.">
+    <meta name="twitter:image" content="https://nicolasbeneville-rgb.github.io/book-nils/Photos/IMG-20250414-WA0185.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
@@ -236,6 +254,55 @@
             color: #ccc;
         }
 
+        .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-highlight {
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .bio-roles {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .bio-roles li {
+            padding-left: 1.2rem;
+            position: relative;
+            color: #ccc;
+        }
+
+        .bio-roles li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .bio-roles .role-name {
+            color: var(--text);
+            font-style: italic;
+        }
+
+        .bio-roles .role-detail {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
         /* ===== CONTACT ===== */
         .contact-content {
             display: flex;
@@ -261,28 +328,46 @@
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            text-decoration: none;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .cta-button:hover {
-            background: var(--accent);
-            color: var(--bg);
-            opacity: 1;
-        }
-
-        .cta-copy {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 0;
+            border: none;
             background: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            margin-left: 1rem;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .cta-button:hover::after {
+            width: 100%;
+        }
+
+        .cta-button::before {
+            content: '\2709';
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
         }
 
         /* ===== FOOTER ===== */
@@ -427,14 +512,40 @@
             </div>
             <div class="bio-text">
                 <p>
-                    Formé au Conservatoire d'Aix-en-Provence depuis deux ans (actuellement en cycle 3), passé par l'option théâtre au lycée, un DEUST à la Fac de Lettres d'Aix et un stage au Cours Florent.
+                    Formé au <span class="bio-highlight">Conservatoire d'Aix-en-Provence</span> (cycle 3), passé par l'option théâtre au lycée, un DEUST à la Fac de Lettres d'Aix et un stage au <span class="bio-highlight">Cours Florent</span>.
                 </p>
                 <p>
                     Sur scène, c'est le corps qui parle en premier. La colère, l'énergie, l'humour — un jeu physique, direct, sans filtre. Sportif de toujours (rugby, volley, natation, musculation), il apporte au plateau un engagement brut et une présence en mouvement.
                 </p>
-                <p>
-                    Il a travaillé avec Laurent De Richemond, Gelin Guerschon-Hugh et Andréa Ching, et interprété Démetrius (<em>Le Songe d'une nuit d'été</em>), Églée (<em>La Dispute</em>), le Roi et le Père (<em>Cendrillon</em> de Pommerat).
-                </p>
+
+                <h4 style="color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">Rôles</h4>
+                <ul class="bio-roles">
+                    <li>
+                        <span class="role-name">Démetrius</span> — Le Songe d'une nuit d'été<br>
+                        <span class="role-detail">Conservatoire d'Aix-en-Provence</span>
+                    </li>
+                    <li>
+                        <span class="role-name">Églée</span> — La Dispute, Marivaux<br>
+                        <span class="role-detail">Conservatoire d'Aix-en-Provence</span>
+                    </li>
+                    <li>
+                        <span class="role-name">Le Roi & le Père</span> — Cendrillon, Pommerat<br>
+                        <span class="role-detail">Conservatoire d'Aix-en-Provence</span>
+                    </li>
+                    <li>
+                        <span class="role-name">Ferme ta gueule</span> — Création collective<br>
+                        <span class="role-detail">m.e.s. Laurent De Richemond — DEUST Fac de Lettres</span>
+                    </li>
+                    <li>
+                        <span class="role-name">Et pour cette seule raison</span> — Projet Master<br>
+                        <span class="role-detail">m.e.s. Gelin Guerschon-Hugh</span>
+                    </li>
+                    <li>
+                        <span class="role-name">Le Pays lointain</span> — Projet Master<br>
+                        <span class="role-detail">m.e.s. Andréa Ching</span>
+                    </li>
+                </ul>
+
                 <p>
                     Il cherche des rôles qui le poussent — théâtre ou cinéma — pour développer de nouvelles capacités et aller là où il ne s'attend pas.
                 </p>
@@ -447,7 +558,7 @@
         <h2 class="section-title fade-in">Contact</h2>
         <div class="contact-content fade-in">
             <p class="cta-text">Disponible pour vos projets théâtre & cinéma.</p>
-            <a href="https://mail.google.com/mail/?view=cm&to=nils.benville19@gmail.com&su=Contact%20Book%20Nils%20Beneville" target="_blank" class="cta-button">Écrire via Gmail</a>
+            <a href="mailto:nils.benville19@gmail.com?subject=Contact%20Book%20Nils%20Beneville" class="cta-button">Écrivez-moi</a>
         </div>
     </section>
 
