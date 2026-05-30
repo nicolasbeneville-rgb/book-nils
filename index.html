@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nils BENEVILLE — Acteur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --text: #f0f0f0;
+            --accent: #c9a84c;
+            --muted: #888;
+            --card-bg: #151515;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, var(--bg) 100%),
+                        url('Photos/IMG-20250414-WA0185.jpg') center/cover no-repeat;
+            filter: grayscale(30%) contrast(1.1);
+        }
+
+        .hero-placeholder {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-placeholder::after {
+            content: '[ PHOTO HERO — Portrait ou corps en mouvement ]';
+            color: var(--muted);
+            font-size: 1rem;
+            border: 1px dashed var(--muted);
+            padding: 3rem 4rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-bottom: 4rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 3rem;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .section-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--muted);
+            margin: 3rem 0 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ===== GALERIE ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: var(--card-bg);
+            border: 1px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .gallery-item .placeholder-text {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* ===== PROFIL ===== */
+        .profil-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .profil-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .profil-info dt {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .profil-info dd {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .bio-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .contact-content a:hover {
+            opacity: 0.7;
+        }
+
+        .cta-text {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+            color: var(--bg);
+            opacity: 1;
+        }
+
+        .cta-copy {
+            background: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            margin-left: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--muted);
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .profil-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">NB</div>
+        <ul>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <h1>Nils <span>Beneville</span></h1>
+            <p>Acteur</p>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie">
+        <h2 class="section-title fade-in">Galerie</h2>
+
+        <h3 class="section-subtitle fade-in"><em>Ferme ta gueule</em> — m.e.s. Laurent De Richemon</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0035.jpg" alt="Ferme ta gueule 1">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0048.jpg" alt="Ferme ta gueule 2">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0098.jpg" alt="Ferme ta gueule 3">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20260520-WA0017.jpg" alt="Ferme ta gueule 4">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250416-WA0006.jpg" alt="Ferme ta gueule 5">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250416-WA0030.jpg" alt="Ferme ta gueule 6">
+            </div>
+        </div>
+
+        <h3 class="section-subtitle fade-in"><em>Et pour cette seule raison</em> — m.e.s. Gelin Guerschon-Hugh</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120283.png" alt="Et pour cette seule raison 1">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120273.png" alt="Et pour cette seule raison 2">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120397.png" alt="Et pour cette seule raison 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="profil">
+        <h2 class="section-title fade-in">Profil</h2>
+        <div class="profil-grid fade-in">
+            <div>
+                <dl class="profil-info">
+                    <div>
+                        <dt>Âge</dt>
+                        <dd>20 ans (né le 19/04/2006)</dd>
+                    </div>
+                    <div>
+                        <dt>Taille</dt>
+                        <dd>1,85 m</dd>
+                    </div>
+                    <div>
+                        <dt>Yeux</dt>
+                        <dd>Marron vert</dd>
+                    </div>
+                    <div>
+                        <dt>Cheveux</dt>
+                        <dd>Bruns</dd>
+                    </div>
+                    <div>
+                        <dt>Âge de jeu</dt>
+                        <dd>18 – 25 ans</dd>
+                    </div>
+                    <div>
+                        <dt>Langues</dt>
+                        <dd>Français</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="bio-text">
+                <p>
+                    Formé au Conservatoire d'Aix-en-Provence depuis deux ans (actuellement en cycle 3), passé par l'option théâtre au lycée, un DEUST à la Fac de Lettres d'Aix et un stage au Cours Florent.
+                </p>
+                <p>
+                    Sur scène, c'est le corps qui parle en premier. La colère, l'énergie, l'humour — un jeu physique, direct, sans filtre. Sportif de toujours (rugby, volley, natation, musculation), il apporte au plateau un engagement brut et une présence en mouvement.
+                </p>
+                <p>
+                    Il a travaillé avec Laurent De Richemond, Gelin Guerschon-Hugh et Andréa Ching, et interprété Démetrius (<em>Le Songe d'une nuit d'été</em>), Églée (<em>La Dispute</em>), le Roi et le Père (<em>Cendrillon</em> de Pommerat).
+                </p>
+                <p>
+                    Il cherche des rôles qui le poussent — théâtre ou cinéma — pour développer de nouvelles capacités et aller là où il ne s'attend pas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title fade-in">Contact</h2>
+        <div class="contact-content fade-in">
+            <p class="cta-text">Disponible pour vos projets théâtre & cinéma.</p>
+            <a href="https://mail.google.com/mail/?view=cm&to=nils.benville19@gmail.com&su=Contact%20Book%20Nils%20Beneville" target="_blank" class="cta-button">Écrire via Gmail</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 Nils Beneville. Tous droits réservés.
+    </footer>
+
+    <!-- SCRIPT ANIMATIONS -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
