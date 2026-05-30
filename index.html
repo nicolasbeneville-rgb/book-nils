@@ -102,11 +102,29 @@
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            color: var(--muted);
+            font-size: 1.2rem;
+            color: var(--text);
             margin-top: 0.5rem;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 2.5rem;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent);
+            color: var(--bg);
         }
 
         /* ===== NAV ===== */
@@ -370,6 +388,71 @@
             opacity: 1;
         }
 
+        .email-plain {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: var(--accent);
+            opacity: 1;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            cursor: zoom-in;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
@@ -434,7 +517,8 @@
         <div class="hero-image"></div>
         <div class="hero-content">
             <h1>Nils <span>Beneville</span></h1>
-            <p>Acteur</p>
+            <p>Acteur — Théâtre & Cinéma</p>
+            <a href="#contact" class="hero-cta">Me contacter</a>
         </div>
     </section>
 
@@ -442,7 +526,7 @@
     <section id="galerie">
         <h2 class="section-title fade-in">Galerie</h2>
 
-        <h3 class="section-subtitle fade-in"><em>Ferme ta gueule</em> — m.e.s. Laurent De Richemon</h3>
+        <h3 class="section-subtitle fade-in"><em>Ferme ta gueule</em> — m.e.s. Laurent De Richemond</h3>
         <div class="gallery-grid">
             <div class="gallery-item fade-in">
                 <img src="Photos/IMG-20250414-WA0035.jpg" alt="Ferme ta gueule 1">
@@ -559,6 +643,10 @@
         <div class="contact-content fade-in">
             <p class="cta-text">Disponible pour vos projets théâtre & cinéma.</p>
             <a href="mailto:nils.benville19@gmail.com?subject=Contact%20Book%20Nils%20Beneville" class="cta-button">Écrivez-moi</a>
+            <span class="email-plain">nils.benville19@gmail.com</span>
+            <div class="contact-links">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            </div>
         </div>
     </section>
 
@@ -567,8 +655,15 @@
         &copy; 2026 Nils Beneville. Tous droits réservés.
     </footer>
 
-    <!-- SCRIPT ANIMATIONS -->
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" aria-label="Fermer">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
+        // Animations fade-in
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -576,8 +671,29 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+        });
     </script>
 
 </body>
