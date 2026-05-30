@@ -206,6 +206,28 @@
             gap: 1rem;
         }
 
+        /* ===== SHOWREEL ===== */
+        #showreel {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .gallery-item {
             position: relative;
             aspect-ratio: 3/4;
@@ -506,8 +528,8 @@
     <nav>
         <div class="logo">NB</div>
         <ul>
-            <li><a href="#galerie">Galerie</a></li>
             <li><a href="#profil">Profil</a></li>
+            <li><a href="#galerie">Galerie</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -519,46 +541,6 @@
             <h1>Nils <span>Beneville</span></h1>
             <p>Acteur — Théâtre & Cinéma</p>
             <a href="#contact" class="hero-cta">Me contacter</a>
-        </div>
-    </section>
-
-    <!-- GALERIE -->
-    <section id="galerie">
-        <h2 class="section-title fade-in">Galerie</h2>
-
-        <h3 class="section-subtitle fade-in"><em>Ferme ta gueule</em> — m.e.s. Laurent De Richemond</h3>
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20250414-WA0035.jpg" alt="Ferme ta gueule 1">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20250414-WA0048.jpg" alt="Ferme ta gueule 2">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20250414-WA0098.jpg" alt="Ferme ta gueule 3">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20260520-WA0017.jpg" alt="Ferme ta gueule 4">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20250416-WA0006.jpg" alt="Ferme ta gueule 5">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/IMG-20250416-WA0030.jpg" alt="Ferme ta gueule 6">
-            </div>
-        </div>
-
-        <h3 class="section-subtitle fade-in"><em>Et pour cette seule raison</em> — m.e.s. Gelin Guerschon-Hugh</h3>
-        <div class="gallery-grid">
-            <div class="gallery-item fade-in">
-                <img src="Photos/P1120283.png" alt="Et pour cette seule raison 1">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/P1120273.png" alt="Et pour cette seule raison 2">
-            </div>
-            <div class="gallery-item fade-in">
-                <img src="Photos/P1120397.png" alt="Et pour cette seule raison 3">
-            </div>
         </div>
     </section>
 
@@ -633,6 +615,62 @@
                 <p>
                     Il cherche des rôles qui le poussent — théâtre ou cinéma — pour développer de nouvelles capacités et aller là où il ne s'attend pas.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWREEL (placeholder — activer quand vidéo prête) -->
+    <!--
+    <section id="showreel">
+        <h2 class="section-title fade-in">Showreel</h2>
+        <div class="video-wrapper fade-in">
+            <iframe
+                src="https://www.youtube.com/embed/VOTRE_ID_VIDEO"
+                title="Showreel Nils Beneville"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+    -->
+
+    <!-- GALERIE -->
+    <section id="galerie">
+        <h2 class="section-title fade-in">Galerie</h2>
+
+        <h3 class="section-subtitle fade-in"><em>Ferme ta gueule</em> — m.e.s. Laurent De Richemond</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0035.jpg" alt="Ferme ta gueule 1">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0048.jpg" alt="Ferme ta gueule 2">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250414-WA0098.jpg" alt="Ferme ta gueule 3">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20260520-WA0017.jpg" alt="Ferme ta gueule 4">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250416-WA0006.jpg" alt="Ferme ta gueule 5">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/IMG-20250416-WA0030.jpg" alt="Ferme ta gueule 6">
+            </div>
+        </div>
+
+        <h3 class="section-subtitle fade-in"><em>Et pour cette seule raison</em> — m.e.s. Gelin Guerschon-Hugh</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120283.png" alt="Et pour cette seule raison 1">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120273.png" alt="Et pour cette seule raison 2">
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="Photos/P1120397.png" alt="Et pour cette seule raison 3">
             </div>
         </div>
     </section>
