@@ -219,6 +219,13 @@ VSG integrates MCP — a protocol for LLMs to interact with external APIs via a 
 
 **Future potential:** DigiTools APIs could be exposed as MCP tools for natural-language admin operations.
 
+## Expert Execution Standard
+- Start from the safest supported default: VSG Common plus `/chat/completions` unless a higher-volume constraint is proven.
+- State quota, auth, retry, token cache, and sanitization implications before proposing implementation.
+- Prefer stable, observable integration paths over clever wrappers.
+- If the VSG feature is user-facing, include accessible error feedback, latency expectations, and client-side performance impact in the recommendation.
+- Never recommend secrets in code, silent retries, or UI flows that hide API failure states from the user.
+
 ### Support & Contact
 - API Team: `fr.ist.engineeringapi.all.groups@veolia.com`
 - ServiceNow portal for requests

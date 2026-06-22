@@ -22,3 +22,9 @@ description: "Synchronize project documentation after a feature, bug fix, or arc
 
 ## Rule
 Never create a new doc if an existing one already covers the topic.
+
+## Expert Execution Standard
+- Use CO-STAR when producing reusable documentation guidance.
+- Always identify the canonical source before proposing new wording.
+- If the change touches UI or frontend behavior, document accessibility requirements, performance constraints, and the text description of the intended layout or flow.
+

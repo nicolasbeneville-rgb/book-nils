@@ -33,6 +33,31 @@ winget install Python.Python.3.12
 
 When user requests UI/UX work (design, build, create, implement, review, fix, improve), follow this workflow:
 
+## Expert Blind-Design Rules
+
+These rules are mandatory when working from code and text only, without reliable visual preview.
+
+1. **No arbitrary layout CSS**
+	- Do not invent raw CSS for structural placement.
+	- Do not rely on absolute coordinates or freehand offsets for core layout.
+	- Prefer documented utility classes or strict Flexbox/Grid primitives.
+
+2. **Textual structural control before validation**
+	- Before calling a design valid, inspect the HTML/component tree textually.
+	- Verify no broken nesting, no unclosed tags, and no layout logic dependent on arbitrary coordinates.
+	- Validate that the primary action remains obvious in the structure itself.
+
+3. **Text layout plan is required**
+	- Describe the interface as rows, columns, zones, and hierarchy.
+	- Example: `Row 1 = logo left, nav right`, `Column A = filters`, `Column B = results`.
+
+4. **Accessibility and performance are part of design quality**
+	- Check semantic structure, accessible names, focus order, contrast, touch targets, and reduced motion.
+	- Prefer low-JS, low-reflow layouts and avoid heavy decorative effects unless justified.
+
+5. **CO-STAR for high-value guidance**
+	- When the final output is meant to guide another AI assistant or serve as reusable implementation guidance, structure the response with `Context`, `Objective`, `Steps`, `Tone`, `Audience`, and `Response`.
+
 ### Step 1: Analyze User Requirements
 
 Extract key information from user request:
@@ -255,6 +280,13 @@ These are frequently overlooked issues that make UI look unprofessional:
 ## Pre-Delivery Checklist
 
 Before delivering UI code, verify these items:
+
+### Blind-Design Validation
+- [ ] Core layout uses utility classes or strict Flex/Grid, not arbitrary raw CSS
+- [ ] No absolute coordinates used for primary structure unless explicitly documented by the system
+- [ ] HTML/component tree checked for unclosed tags and invalid nesting
+- [ ] Text layout plan provided for the final interface
+- [ ] Primary action placement is explicit in the text description
 
 ### Visual Quality
 - [ ] No emojis used as icons (use SVG instead)

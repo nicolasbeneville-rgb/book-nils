@@ -21,3 +21,9 @@ description: "Create a backup checkpoint before a critical change, schema migrat
 - backup files list
 - rollback note
 - decision-log entry draft
+
+## Expert Execution Standard
+- Frame the result as an operational checkpoint, not a suggestion.
+- Explicitly state the stable restore point, rollback trigger, and validation gate.
+- If user-facing UI is impacted, require rollback expectations for accessibility and runtime performance, not code only.
+

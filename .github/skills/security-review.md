@@ -18,3 +18,9 @@ description: "Security review checklist for features handling user input, authen
 - blocking risks
 - recommended controls
 - docs to update in security baseline
+
+## Expert Execution Standard
+- Order findings by severity and exploitability.
+- Prefer root-cause mitigations over cosmetic client-side barriers.
+- If a control changes user interaction, include keyboard access, readable feedback, and acceptable latency as part of the recommendation.
+

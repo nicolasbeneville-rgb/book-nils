@@ -95,3 +95,8 @@ Workflow complet obligatoire :
 - Tests : `[TEST_COMMAND ou "aucun"]`
 - Déploiement : `[DEPLOY_COMMAND]` (ne JAMAIS exécuter sans GO explicite)
 - Backups : `[BACKUP_PATTERN ou "git uniquement"]`
+
+## Expert Execution Standard
+- Toute hypothèse doit être falsifiable et liée à une preuve locale.
+- Si le bug touche l'UI, vérifier aussi la structure HTML/composant, l'accessibilité, et les effets de performance avant de conclure.
+- Refuser les "fixes" qui déplacent simplement le symptôme avec du CSS arbitraire ou des conditions ad hoc.

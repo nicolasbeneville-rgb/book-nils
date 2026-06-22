@@ -20,3 +20,9 @@ Read `docs/project/charte-graphique.md` before auditing.
 - pass / conditional / fail
 - prioritized fixes
 - optional modern design recommendation
+
+## Expert Execution Standard
+- Always read the design charter before judging visual quality.
+- Forbid arbitrary raw CSS and absolute coordinate layout for structural alignment unless the design system explicitly defines that pattern.
+- Require utility-class, token-based, or strict Flexbox/Grid alignment for reusable UI structure.
+- Before validating, provide a text layout plan, a contrast/readability check, and a performance sanity check for decorative effects.

@@ -17,3 +17,10 @@ description: "Compare backend, storage, cache, or integration options for a tech
 - Option C
 - Recommendation
 - Trade-offs: cost, complexity, maintainability, security, scalability
+
+## Expert Execution Standard
+- Structure the final answer with CO-STAR whenever the task requires a recommendation or reusable guidance.
+- State the controlling constraints first: quota, latency, data shape, rollback cost, operational risk.
+- Prefer the smallest stable architecture that satisfies the requirement.
+- If the API contract affects UI behavior, include accessibility impact, performance impact, and client complexity impact.
+
