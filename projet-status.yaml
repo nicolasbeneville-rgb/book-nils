@@ -1,0 +1,62 @@
+# Template projet-status.yaml — copier à la racine de chaque projet actif
+# Chargé au démarrage de chaque session (GO BONJOUR étape 0).
+# Format compact intentionnel — cible < 150 tokens.
+# Légende: s=statut(todo/wip/done/blocked) | ap=agent-pre(projet-architecte) | av=agent-verification | cp=checkpoint-needed
+
+p: Book_Nils
+v: "0.1.0"
+sprint: sprint1
+date_maj: 2026-08-16
+vsg: false
+cdc:
+  - {id: T1, t: "<titre tâche>", s: todo}
+  - {id: T2, t: "<titre tâche>", s: wip, ap: ~, av: ~, cp: false}
+next: "T1 → @projet-architecte avant tout code"
+bloquants: []
+compte_clasp: TO_CONFIRM  # PRO | PERSO | TO_CONFIRM — voir _governance/clasp-project-registry.md
+deploy_id: TO_CONFIRM
+action_plan:
+  id: "<date>-<short-id>"
+  status: planned
+  objective: "<resultat mesurable>"
+  scope: "<fichiers ou workflow>"
+  critical_path: "read -> hypothesis -> edit -> focused test -> integration check"
+  risks: "<risques bloquants et regressions possibles>"
+  rollback: "<backup, commit ou restauration>"
+  tests: "<commande reelle ou parcours utilisateur>"
+  feedback_loop: "<test a rejouer apres chaque edition>"
+  learning: "<lecon a capturer si nouvelle>"
+  integration_check: "<projets, contrats, catalogues et GO a verifier>"
+  human_gate: "<none ou décision/approbation/secret/irréversible>"
+  human_value: "<pourquoi interrompre l'utilisateur, sinon none>"
+  acceptance: "<preuve attendue avant fin>"
+  evidence: "<renseigne uniquement au statut verified>"
+  mode: plan_first
+  routing: "<agents and skills selected, or none>"
+  agents: "<agents to activate, or none>"
+  skills: "<skills to activate, or none>"
+  arbitrations: "<decisions made, or none>"
+  retirements: "<retired elements, or none>"
+  parallel_dispatch: "<none or explicitly independent scope>"
+  foundations_version_start: "<integer captured at tranche start>"
+  foundations_version_at_completion: "<integer read at completion>"
+  foundations_version_change: "none | <traced amendment reference>"
+  foundations_version_confirmation: "none | confirmed:<human confirmation reference>"
+  live_test_required: false
+  live_test_procedure: "not_required | <project procedure path>"
+  live_test_status: "not_required | planned | executed | blocked"
+  live_test_evidence: "not_required | <output, capture or proof>"
+foundations:
+  version: 1
+  source: "<CDC or canonical foundation source>"
+  phase: discovery
+  vision: "<vision produit ou objectif utilisateur>"
+  challenge: "<hypothÃ¨ses, contradictions, questions et contraintes Ã  clarifier>"
+  clarification_status: open
+  global_plan: "<Ã  construire aprÃ¨s clarification : epics, stories et dÃ©pendances>"
+  epics: "<epics et rÃ©sultats attendus>"
+  user_stories: "<user stories et critÃ¨res d'acceptation>"
+  tasks: "<tÃ¢ches claires, testables et vÃ©rifiables>"
+  test_level: targeted
+  test_matrix: "<chemin de matrice ou scÃ©narios intÃ©grÃ©s au plan>"
+  quality_dimensions: "fonction, UX/accessibilitÃ©, sÃ©curitÃ©, messages, performance, tests, documentation, rollback"

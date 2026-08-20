@@ -1,4 +1,4 @@
-# Operating Rules
+﻿# Operating Rules
 
 ## Deployment Rule
 - Never deploy without explicit GO from requester in chat.
@@ -18,3 +18,8 @@
 ## Startup Rule
 - Initialize mandatory startup assets before implementation begins.
 - Assign one owner agent per startup asset.
+
+## Clasp Account Rule
+- Clasp account for this project: PERSO → voir _governance/clasp-project-registry.md (workspace racine)
+- Any `clasp push`, `clasp version`, or `clasp deploy` with another account is blocked.
+- If `clasp` returns `The caller does not have permission`, stop deployment and re-authenticate with the declared account.
