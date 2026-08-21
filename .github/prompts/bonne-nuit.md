@@ -10,8 +10,8 @@ Alias principal : `GO NUIT`. Alias historique accepte : `GO BONNE NUIT`.
 
 ## Protocole SPRINT 4 — Multi-PC End-of-Session
 
-**Objectif** : Clôture complète, multiplateforme, append-only tracing, GO SYNC optionnel
-**Durée estimée** : 10-15 min pour session standard
+**Objectif** : Clôture complète, multiplateforme, append-only tracing, GO SYNC optionnel  
+**Durée estimée** : 10-15 min pour session standard  
 **Blocages** : Aucun — tous les points doivent passer avant session-log write
 
 La ligne `OPEN` écrite par `GO JOUR` est la trace d'ouverture. Elle ne doit jamais être remplacée par la ligne de clôture.
