@@ -104,6 +104,7 @@ La ligne `OPEN` écrite par `GO JOUR` est la trace d'ouverture. Elle ne doit jam
       - git commit -m "[PROJET] [description]"
       - Capture hash: git rev-parse --short HEAD
       - Trace: "[OK] Commit: [hash] — [message]"
+      - GO NUIT ne committe jamais les fichiers SYNC : `.github/copilot-instructions-commun.md`, les overlays `-gas`/`-react`, `.github/agents/`, `.github/skills/`, `.github/prompts/`, `.github/hooks/` et `_governance/governance-quality-procedure.md`. Ces fichiers appartiennent à GO SYNC.
 
 §5.3: ⚠️ IMPORTANT — Le push se fait à §8, PAS MAINTENANT
       - Commit LOCAL uniquement
