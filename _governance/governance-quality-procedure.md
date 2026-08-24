@@ -1,7 +1,7 @@
 ﻿# Procedure qualite - Gouvernance Copilot
 
 **Statut** : procedure operationnelle obligatoire
-**Version** : 1.1 - 2026-08-20
+**Version** : 1.1 - 2026-08-21
 **Proprietaire** : humain responsable de la gouvernance
 **Execution** : Copilot et scripts de validation
 **Perimetre** : depot chapeau, modele-copilot et sous-projets enregistres
@@ -415,11 +415,11 @@ decision explicite.
 
 ## 12. Decisions restantes
 
-| ID | Question | Option recommandee | Effet si non tranche |
-|---|---|---|---|
-| GOV-001 | `modele-copilot` diffuse-t-il agents/skills/prompts ou sert-il uniquement GO NEW + miroir commun ? | DECIDE: Option A; il reste modele GO NEW et source agents/skills projet | Decision tracee dans `_governance/decision-log-2026-08-20.md`; Option B devient une migration future distincte |
-| GOV-002 | Les blocs clasp historiques non marques doivent-ils etre migres ? | Oui, migration explicite projet par projet | Les comptes restent proteges par preservation, mais non rafraichis automatiquement |
-| GOV-003 | Les projets absents du registre doivent-ils etre actifs ? | Les inscrire avant diffusion | V7 et GO SYNC les excluent volontairement |
+| ID | Question | Option recommandee | Effet si non tranche | Date de revue |
+|---|---|---|---|---|
+| GOV-001 | `modele-copilot` diffuse-t-il agents/skills/prompts ou sert-il uniquement GO NEW + miroir commun ? | DECIDE: Option A; il reste modele GO NEW et source agents/skills projet | Decision tracee dans `_governance/decision-log-2026-08-20.md`; Option B devient une migration future distincte | 2026-09-20 |
+| GOV-002 | Les blocs clasp historiques non marques doivent-ils etre migres ? | Oui, migration explicite projet par projet | Les comptes restent proteges par preservation, mais non rafraichis automatiquement | 2026-09-21 |
+| GOV-003 | Les projets absents du registre doivent-ils etre actifs ? | Les inscrire avant diffusion | V7 et GO SYNC les excluent volontairement | 2026-09-21 |
 
 ## 13. Cycle de vie des agents et des skills
 
