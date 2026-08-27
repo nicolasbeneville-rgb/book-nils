@@ -173,6 +173,7 @@ La ligne `OPEN` écrite par `GO JOUR` est la trace d'ouverture. Elle ne doit jam
            → Re-run git push
            → STOP si 2ème push échoue (resolver hors session)
       - Trace: "[OK] Pushed commit [hash]"
+      - GO NUIT ne pousse pas les fichiers SYNC listés à l'étape §5.2 (`.github/copilot-instructions-commun.md`, overlays `-gas`/`-react`, `.github/agents/`, `.github/skills/`, `.github/prompts/`, `.github/hooks/`, `_governance/governance-quality-procedure.md`) ; GO SYNC les committe et les pousse dans sa boucle de gouvernance.
 
       - Si un dépôt est dirty, divergent ou sans remote : BLOQUER avec le dépôt, la cause et l'action exacte.
 
@@ -218,7 +219,6 @@ La ligne `OPEN` écrite par `GO JOUR` est la trace d'ouverture. Elle ne doit jam
       ```
 
       Le rapport final contient :
-      - `Ce que j'ai fait` : fichiers lus et ecrits, documents mis a jour, validations et cloture du plan ;
       - `Ce qui marche` : preuves utiles uniquement ;
       - `Ce qui bloque` : fait, cause, impact et action automatique si un blocage existe ;
       - `Action / Décision humaine` : action attendue, arbitrage requis ou confirmation qu'aucune validation humaine n'est necessaire ;
