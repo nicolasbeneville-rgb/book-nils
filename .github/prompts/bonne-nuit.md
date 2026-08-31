@@ -199,6 +199,7 @@ La ligne `OPEN` écrite par `GO JOUR` est la trace d'ouverture. Elle ne doit jam
       - GO_SYNC: OUI ou NON (de §7)
       - STATUT: CLEAN (tout OK) / WARN (alertes, non-bloquant) / INTERRUPTED (session non complétée)
       - NOTES: optionnel — raison WARN ou INTERRUPTED
+      - WARN obligatoire si `@checkpoint-sauvegarde` a été suggéré (§0, cp: true) et n'a pas pu s'exécuter avant un commit à risque de cette session — NOTES cite alors la raison de l'échec.
 
 §9.3: Append ligne à _governance/session-log.md
       - Ajouter une nouvelle ligne de clôture; ne jamais remplacer la ligne OPEN.
